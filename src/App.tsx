@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div
-      className='min-w-screen min-h-screen bg-cover bg-center flex justify-center items-center'
+      className='absolute inset-0 bg-cover bg-center flex justify-center items-center flex-col'
       style={{backgroundImage: `url(${bgImg})`}}>
       <Header></Header>
       <UserLogin></UserLogin>
