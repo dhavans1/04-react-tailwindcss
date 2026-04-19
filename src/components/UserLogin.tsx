@@ -1,7 +1,21 @@
+import { useState } from 'react';
+import { validateUserInputs } from '../utils/utils';
 import Button from './Button';
 import Input from './Input';
+import type { IInputValidity } from '../interfaces/userInput.interface';
 
 export default function UserLogin() {
+    const [email, setEmail] = useState<string>('');
+    const [pwd, setPwd] = useState<string>('');
+    const [inpValidity, updateInpValidity] = useState<IInputValidity>({
+        validEmail: true,
+        validPwd: true
+    });
+
+    function validateInp() {
+        updateInpValidity(validateUserInputs(email, pwd))
+    }
+
     return (
         <div className='
             h-max border-2 
@@ -14,9 +28,9 @@ export default function UserLogin() {
             flex-col 
             items-center'
         >
-            <Input label='Username' type='text'/>
-            <Input label='Password' type='password'/>
-            <Button label='Login'/>
+            <Input label='Email' initVal={email} OnChange={setEmail} isValid={inpValidity.validEmail} type='text'/>
+            <Input label='Password' initVal={pwd} OnChange={setPwd} isValid={inpValidity.validPwd} type='password'/>
+            <Button label='Login' onClick={validateInp}/>
             <a href="./" className='
                 text-white 
                 transition duration-100

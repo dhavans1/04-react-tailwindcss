@@ -1,5 +1,5 @@
 import './App.css';
-import bgImg from '../public/bg.png'
+import bgImg from '/bg.png'
 import Header from './components/Header';
 import UserLogin from './components/UserLogin';
 

@@ -2,11 +2,14 @@ import React from "react";
 
 type btnProps = {
     label: string;
+    onClick: () => void;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
-export default function Button({label, ...props}: btnProps) {
+export default function Button({label, onClick, ...props}: btnProps) {
+
     return (
         <button
+            onClick={onClick}
             {...props}
             className='
                 h-10
