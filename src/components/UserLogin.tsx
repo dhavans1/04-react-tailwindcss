@@ -28,8 +28,8 @@ export default function UserLogin() {
             flex-col 
             items-center'
         >
-            <Input label='Email' initVal={email} OnChange={setEmail} isValid={inpValidity.validEmail} type='text'/>
-            <Input label='Password' initVal={pwd} OnChange={setPwd} isValid={inpValidity.validPwd} type='password'/>
+            <Input label='Email' initVal={email} OnChange={setEmail} isValid={inpValidity.validEmail} type='text' autoComplete='email'/>
+            <Input label='Password' initVal={pwd} OnChange={setPwd} isValid={inpValidity.validPwd} type='password' autoComplete='current-password'/>
             <Button label='Login' onClick={validateInp}/>
             <a href="./" className='
                 text-white 
